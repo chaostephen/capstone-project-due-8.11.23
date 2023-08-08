@@ -1,116 +1,47 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
-    background-color: #232323;
+  background: #ddd;
+  margin: 1rem;
+  padding: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: "Open Sans", sans-serif;
 }
 
-header {
-    height: 80px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    color: blanchedalmond;
+nav {
+	border-bottom: 2px solid orange;
 }
 
-main {
-    display: flex; 
-    justify-content: center;
+ol {
+	padding-left: 0;
 }
 
-form {
-    width: 350px;
-    height: 350px;
-    background-color: blanchedalmond;
-    position: relative;
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-evenly; 
-    align-items: center;
-    margin: 30px;
+.crumb {
+	margin-right: 2em;
+	display: inline;
+}
+.box {
+	display:inline-flex;
+	margin:0;
 }
 
-button {
-    background-color: #232323;
-    width: 125px;
-    height: 25px;
-    color: blanchedalmond;
-    border: none;
-    margin: 5px;
+a {
+	color: orange;
 }
 
-input[type='text'] {
-    width: 85%;
-    height: 30px;
-    border: none;
-    border-bottom: 2px solid #232323;
-    color: #232323;
-    background-color: blanchedalmond;
-}
-
-#ratings-container {
-    width: 85%;
+a:visited {
+	color: crimson;
 }
 
 
-#radio-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+input {
+	display: block;
 }
 
-#foods-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+img {
+	max-width: 300px;
 }
 
-.food-cover {
-    width: 200px; 
-    height: 300px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-}
-
-.food-card {
-    background-color: blanchedalmond;
-    width: 200px;
-    margin: 20px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 12px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.food-title {
-    font-size: 18px;
-    margin: 5px 0;
-}
-
-.food-rating {
-    font-size: 15px;
-    margin: 5px 0;
-}
-
-.btns-container {
-    width: 100%; 
-    display: flex;
-    justify-content: space-evenly;
-    margin: 5px;
-}
-
-.assess{
-    background-color: green;
-    font-size: 14px;
-    
-}
-.btns-container > button {
-    width: 24px;
+.favorite {
+	background-color: yellow;
+	font-size: 14px;
 }

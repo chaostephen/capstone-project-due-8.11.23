@@ -3,18 +3,24 @@
         "id":1,
         "title":"kookaburra wings",
         "artist": "outback steakhouse",
-        "rating":3
+        "rating":3,
+        "ingredients": ["chicken wings", "sea salt", "baking powder", "garlic powder"],
+        "measurements": ["1 lb","1 ts","1 tbsp","1 clove"]
     },
     {
         "id":2,
         "title":"cheeze wit",
         "artist": "pat's cheesesteaks",
-        "rating":4
+        "rating":4,
+        "ingredients":["ribeye steak","sea salt","black pepper","onion","cheese","bread","garlic clove","butter"],
+        "measurements": ["1 lb","1 ts","1 ts","1 oz","1 oz","1 roll","1 oz","1 tbsp"]
     },
     {
         "id":3,
         "title":"veal parmagiana",
         "artist": "bertucci's",
-        "rating":4
+        "rating":4,
+        "ingredients":["veal","flour","eggwash","bread crumbs","prosciutto","spaghetti sauce","parsley","cheese"],
+        "measurements": ["1 lb","1 oz","1","2 tbsp","1/2 lb","1 oz","1 pinch","1 oz"]
     }
 ]

@@ -1,4 +1,5 @@
 const foodsContainer = document.querySelector('#foods-container')
+
 const form = document.querySelector('form')
 
 const baseURL='http://localhost:4000/api/foods'
@@ -34,8 +35,8 @@ function submitHandler(e){
 function createFoodCard(food) {
     const foodCard = document.createElement('div')
     foodCard.classList.add('food-card')
-
-    foodCard.innerHTML = `<p class="food-name">Food: ${food.title}</p><p class="artist-name">Place: ${food.artist}</p>
+    
+    foodCard.innerHTML = `<p class="food-name">Food: <p id="food-item" onclick="handleIngredients(${food.id})">${food.title} </p></p><p class="artist-name">Place: ${food.artist}</p>
     <div class="btns-container">
         <button onclick="updateFood(${food.id}, 'minus')">-</button>
         <p class="food-rating">${food.rating} stars</p>
@@ -45,7 +46,12 @@ function createFoodCard(food) {
     `
     foodsContainer.appendChild(foodCard)
 }
-
+function handleIngredients(id){
+    // e.preventDefault();
+    console.log(id)
+    sessionStorage.setItem(`id`,id)
+    window.location="/ingredients.html";
+}
 function displayFoods(arr) {
     foodsContainer.innerHTML = ``
     for (let i = 0; i < arr.length; i++) {
@@ -55,13 +61,8 @@ function displayFoods(arr) {
 
 const restaurantBtn = document.getElementById("restaurantButton")
 const dishBtn=document.getElementById("dishButton")
-// const monthBtn=document.getElementById("monthButton")
 const foodBtn=document.getElementById("foodButton")
-
-
-
-
-
+// const ingredientLink=document.getElementById("food-item")
 
 form.addEventListener('submit',submitHandler)
 getAllFoods()
@@ -82,12 +83,7 @@ const getDish = () => {
             alert(data);
     });
 };
-// const getMonth=()=>{
-//     axios.get("http://localhost:4000/api/month/").then(res=>{
-//         const data=res.data;
-//         alert(data);
-//     })
-// }
+
 restaurantBtn.addEventListener('click', getRestaurant)
 dishBtn.addEventListener('click',getDish)
-// monthBtn.addEventListener('click',getMonth)
+// ingredientLink.addEventListener('click',getIngredients)
