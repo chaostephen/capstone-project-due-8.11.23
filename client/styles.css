@@ -10,7 +10,24 @@ body {
 nav {
 	border-bottom: 2px solid orange;
 }
-
+#btns-container{
+	width: 100%;
+	height: 100%; 
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px;
+}
+.buttons{
+	display:flex;
+    flex-direction: row;
+	height:15px;
+	align-items:center;
+	justify-content: space-between;
+	width: 150px;
+}
+.buttons button{
+	cursor: pointer;
+}
 ol {
 	padding-left: 0;
 }

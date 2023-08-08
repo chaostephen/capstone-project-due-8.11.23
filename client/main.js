@@ -50,7 +50,7 @@ function handleIngredients(id){
     // e.preventDefault();
     console.log(id)
     sessionStorage.setItem(`id`,id)
-    window.location="/ingredients.html";
+    window.location="/ingredients";
 }
 function displayFoods(arr) {
     foodsContainer.innerHTML = ``

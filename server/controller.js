@@ -57,15 +57,7 @@ module.exports = {
         const restaurants = [];
         for(let i = 0; i<foodDatabase.length;i++){
             restaurants.push(foodDatabase[i].artist)
-            
-            // if(foodDatabase[i].id===id){
-            //     foodDatabase.splice(i,1)
-            //     res.status(200).send(foodDatabase)
-            //     return
-            // }
-        }
-      
-        // choose random compliment
+            }
         let randomIndex = Math.floor(Math.random() * restaurants.length);
         let randomRestaurant = restaurants[randomIndex];
       
@@ -88,12 +80,45 @@ module.exports = {
 
         let id = +req.params.id
         for (let i =0; i<foodDatabase.length;i++){
+            console.log(foodDatabase[i])
             if (id===foodDatabase[i].id){
                 ingredients=foodDatabase[i].ingredients;
                 measurements=foodDatabase[i].measurements;
             }
         }
                 res.status(200).send({ingredients,measurements})
+    },
+    updateIngredients: (req, res) => {
+        const id = +req.params.id;
+        const type = req.body.type;
+        let foodIndex;
+        for(let i =0; i<foodDatabase.length;i++){
+            if(foodDatabase[i].id===id){
+                foodIndex=i;
+            }
+        }
+
+        if(foodIndex===undefined){
+            res.status(400).send('food not found')
+        } else if (type === 'plus'){
+            for( let i=0;i<foodDatabase[foodIndex].measurements.length;i++){
+                let quantity=foodDatabase[foodIndex].measurements[i].split(" ");
+                quantity[0]=+quantity[0]*2
+                foodDatabase[foodIndex].measurements[i]=quantity.join(" ")
+            }
+           
+            res.status(200).send(foodDatabase[foodIndex])
+        } else if (type==='minus'){
+            for (let i=0;i<foodDatabase[foodIndex].measurements.length;i++){
+                let quantity=foodDatabase[foodIndex].measurements[i].split(" ");
+                quantity[0]=+quantity[0]/2
+                foodDatabase[foodIndex].measurements[i]=quantity.join(" ")
+            }
+            res.status(200).send(foodDatabase[foodIndex])
+        } else {
+            res.status(400).send('invalid type constraint')
+        }
+
     }
 
 }
