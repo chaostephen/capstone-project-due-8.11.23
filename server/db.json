@@ -5,7 +5,8 @@
         "artist": "outback steakhouse",
         "rating":3,
         "ingredients": ["chicken wings", "sea salt", "baking powder", "garlic powder"],
-        "measurements": ["1 lb","1 ts","1 tbsp","1 clove"]
+        "measurements": ["1 lb","1 ts","1 tbsp","1 clove"],
+        "currentSize":1
     },
     {
         "id":2,
@@ -13,7 +14,8 @@
         "artist": "pat's cheesesteaks",
         "rating":4,
         "ingredients":["ribeye steak","sea salt","black pepper","onion","cheese","bread","garlic clove","butter"],
-        "measurements": ["1 lb","1 ts","1 ts","1 oz","1 oz","1 roll","1 oz","1 tbsp"]
+        "measurements": ["1 lb","1 ts","1 ts","1 oz","1 oz","1 roll","1 oz","1 tbsp"],
+        "currentSize":1
     },
     {
         "id":3,
@@ -21,6 +23,7 @@
         "artist": "bertucci's",
         "rating":4,
         "ingredients":["veal","flour","eggwash","bread crumbs","prosciutto","spaghetti sauce","parsley","cheese"],
-        "measurements": ["1 lb","1 oz","1","2 tbsp","1 lb","1 oz","1 pinch","1 oz"]
+        "measurements": ["1 lb","1 oz","1","2 tbsp","1 lb","1 oz","1 pinch","1 oz"],
+        "currentSize":1
     }
 ]

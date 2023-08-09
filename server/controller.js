@@ -1,5 +1,6 @@
 const foodDatabase=require('./db.json');
 let currentID=4;
+
 module.exports = {
 
     getFoods: (req, res) => {res.status(200).send(foodDatabase)},
@@ -77,16 +78,17 @@ module.exports = {
     getIngredients:(req,res)=>{
         let ingredients=[];
         let measurements=[];
-
+        let currentSize=0;
         let id = +req.params.id
         for (let i =0; i<foodDatabase.length;i++){
             console.log(foodDatabase[i])
             if (id===foodDatabase[i].id){
                 ingredients=foodDatabase[i].ingredients;
                 measurements=foodDatabase[i].measurements;
+                currentSize=foodDatabase[i].currentSize;
             }
         }
-                res.status(200).send({ingredients,measurements})
+                res.status(200).send({ingredients,measurements,currentSize})
     },
     updateIngredients: (req, res) => {
         const id = +req.params.id;
@@ -101,19 +103,24 @@ module.exports = {
         if(foodIndex===undefined){
             res.status(400).send('food not found')
         } else if (type === 'plus'){
+            foodDatabase[foodIndex].currentSize++;
             for( let i=0;i<foodDatabase[foodIndex].measurements.length;i++){
                 let quantity=foodDatabase[foodIndex].measurements[i].split(" ");
-                quantity[0]=+quantity[0]*2
+                quantity[0]=+quantity[0]*foodDatabase[foodIndex].currentSize/(foodDatabase[foodIndex].currentSize-1)
                 foodDatabase[foodIndex].measurements[i]=quantity.join(" ")
             }
            
             res.status(200).send(foodDatabase[foodIndex])
         } else if (type==='minus'){
+            if(foodDatabase[foodIndex].currentSize<=1){
+                res.status(400).send('cannot go below 1 serving')    
+            } else {
+                foodDatabase[foodIndex].currentSize--;
             for (let i=0;i<foodDatabase[foodIndex].measurements.length;i++){
                 let quantity=foodDatabase[foodIndex].measurements[i].split(" ");
-                quantity[0]=+quantity[0]/2
+                quantity[0]=+quantity[0]*foodDatabase[foodIndex].currentSize/(foodDatabase[foodIndex].currentSize+1)
                 foodDatabase[foodIndex].measurements[i]=quantity.join(" ")
-            }
+            }}
             res.status(200).send(foodDatabase[foodIndex])
         } else {
             res.status(400).send('invalid type constraint')
