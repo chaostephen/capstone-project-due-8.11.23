@@ -1,4 +1,4 @@
-const baseURL='http://localhost:4000/api/ingredients'
+const baseURL='/api/ingredients'
 const ingredientsContainer=document.querySelector('#ingredients-list')
 const ingredientsCallback=({data:ingredients})=>{
     ingredientsContainer.innerHTML = ``;
