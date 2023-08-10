@@ -1,29 +1,29 @@
 [
     {
         "id":1,
-        "title":"kookaburra wings",
-        "artist": "outback steakhouse",
+        "title":"lobster pasta",
+        "artist": "steves seafood",
         "rating":3,
-        "ingredients": ["chicken wings", "sea salt", "baking powder", "garlic powder"],
-        "measurements": ["1 lb","1 ts","1 tbsp","1 clove"],
+        "ingredients": ["linguini", "garlic", "olive oil", "cooked lobster", "creamy pasta sauce"],
+        "measurements": ["1 lb","1 ts","1 tbsp","2 ounces","2 ounces"],
         "currentSize":1
     },
     {
         "id":2,
-        "title":"cheeze wit",
-        "artist": "pat's cheesesteaks",
+        "title":"veetos gargantuan",
+        "artist": "steves sandwiches",
         "rating":4,
-        "ingredients":["ribeye steak","sea salt","black pepper","onion","cheese","bread","garlic clove","butter"],
-        "measurements": ["1 lb","1 ts","1 ts","1 oz","1 oz","1 roll","1 oz","1 tbsp"],
+        "ingredients":["roast beef","salami","ham","lettuce","onion","tomato","cheese","bread roll"],
+        "measurements": [".5 lb",".5 lb",".5 lb","1 ounce","1 ounce","1 ounce","1 ounce","1 roll"],
         "currentSize":1
     },
     {
         "id":3,
-        "title":"veal parmagiana",
-        "artist": "bertucci's",
+        "title":"chopped salad",
+        "artist": "steves chopped",
         "rating":4,
-        "ingredients":["veal","flour","eggwash","bread crumbs","prosciutto","spaghetti sauce","parsley","cheese"],
-        "measurements": ["1 lb","1 oz","1","2 tbsp","1 lb","1 oz","1 pinch","1 oz"],
+        "ingredients":["romaine lettuce","iceberg lettuce","cherry tomatoes","chick peas","bell peppers","salami","provolone","vinigarette dressing"],
+        "measurements": ["2 ounce","2 ounce","2 tbsp","2 tbsp","2 tbsp",".5 lb",".5 lb","2.5 ounce"],
         "currentSize":1
     }
 ]

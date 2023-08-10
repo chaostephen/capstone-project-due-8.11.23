@@ -2,7 +2,7 @@ const foodsContainer = document.querySelector('#foods-container')
 
 const form = document.querySelector('form')
 
-const baseURL='http://localhost:4000/api/foods'
+const baseURL='/api/foods'
 
 const foodsCallback = ({data:foods})=> displayFoods(foods)
 
@@ -69,7 +69,7 @@ getAllFoods()
 
 
 const getRestaurant = () => {
-    axios.get("http://localhost:4000/api/restaurant/")
+    axios.get("/api/restaurant/")
         .then(res => {
             const data = res.data;
             alert(data);
@@ -77,7 +77,7 @@ const getRestaurant = () => {
 };
 
 const getDish = () => {
-    axios.get("http://localhost:4000/api/dish/")
+    axios.get("/api/dish/")
         .then(res => {
             const data = res.data;
             alert(data);

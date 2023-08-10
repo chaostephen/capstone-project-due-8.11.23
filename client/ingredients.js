@@ -12,7 +12,7 @@ const getIngredients=()=>{
     axios.get(`/api/ingredients/${id}`)
         .then(res => {
             const {ingredients,measurements, currentSize} = res.data;
-            console.log(res.data)
+            // console.log(res.data)
             for (let i =0; i<ingredients.length;i++){
                 createIngredientsCard(ingredients[i],measurements[i]);
             }
@@ -20,7 +20,7 @@ const getIngredients=()=>{
 })}
 
 const updateServing=(id,type)=>axios.put(`${baseURL}/${id}`,{type}).then((res)=>{
-    console.log(res.data)
+    // console.log(res.data)
     // if (type ==="plus"){
     //     servingSize++;
     // } else if (type==="minus"){
@@ -56,7 +56,7 @@ function createIngredientsCard(ingredient,measurement) {
     const ingredientsCard = document.createElement('div')
     ingredientsCard.classList.add('food-card')
     
-    ingredientsCard.innerHTML = `<p class="ingredient-name">Ingredients: <a id="ingredient-item">${ingredient} </a></p><p class="quantity-amount">Quantity:${measurement}</p>`
+    ingredientsCard.innerHTML = `<p class="ingredient-name">Ingredients: <a id="ingredient-item">${ingredient} </a></p><p class="quantity-amount">Quantity: ${measurement}</p>`
     ingredientsContainer.appendChild(ingredientsCard)
 
 }

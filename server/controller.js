@@ -81,7 +81,7 @@ module.exports = {
         let currentSize=0;
         let id = +req.params.id
         for (let i =0; i<foodDatabase.length;i++){
-            console.log(foodDatabase[i])
+            // console.log(foodDatabase[i])
             if (id===foodDatabase[i].id){
                 ingredients=foodDatabase[i].ingredients;
                 measurements=foodDatabase[i].measurements;
